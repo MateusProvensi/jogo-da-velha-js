@@ -1,16 +1,15 @@
 import { Utils } from "../../util/Util.js";
-import { Button } from "./Button.js";
 
 export class Tabuleiro {
-  constructor(){
-    this.elemento = Utils.criarNovoElemento('div')
+  constructor() {
+    this.elemento = Utils.criarNovoElemento("div");
     this.elemento.style.display = "flex";
     this.elemento.style.flexWrap = "wrap";
     this.elemento.style.height = "600px";
     this.elemento.style.width = "600px";
     this.elemento.style.backgroundColor = "black";
 
-    this.elemento.style.padding = "12.5px"
+    this.elemento.style.padding = "12.5px";
   }
 
   render(tagBody) {

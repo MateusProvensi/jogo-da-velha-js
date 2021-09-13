@@ -42,19 +42,23 @@ export class Jogo {
     });
 
     if (!mensagem) {
-      let quantidadeBotoesPreenchidos = 0;
-      this.botoes.forEach((botao) => {
-        if (botao.innerHTML !== "") {
-          quantidadeBotoesPreenchidos += 1;
-        }
-      });
-
-      if (quantidadeBotoesPreenchidos === 9) {
-        mensagem = "Ih! Deu velha. Ninguém ganhou!";
-      }
+      mensagem = this.verificarEmpate(this.botoes);
     }
 
     return mensagem;
+  }
+
+  verificarEmpate(botoes) {
+    let quantidadeBotoesPreenchidos = 0;
+    botoes.forEach((botao) => {
+      if (botao.innerHTML !== "") {
+        quantidadeBotoesPreenchidos += 1;
+      }
+    });
+
+    if (quantidadeBotoesPreenchidos === 9) {
+      return "Ih! Deu velha. Ninguém ganhou!";
+    }
   }
 
   definirCorJogador() {
