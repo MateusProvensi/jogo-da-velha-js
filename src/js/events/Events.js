@@ -14,15 +14,19 @@ export class Events {
         button.style.color = jogo.definirCorJogador();
 
         button.innerHTML = jogo.jogadorAtual;
-    
+
         const mensagem = jogo.verificarVitoria();
 
         if (mensagem) {
           alert(mensagem);
           Events.definirEventoBotaoPadrao(botoes);
         }
-    
-        jogo.jogadorAtual = Utils.proximoJogador(jogo.jogadorAtual, jogo.jogador1, jogo.jogador2);
+
+        jogo.jogadorAtual = Utils.proximoJogador(
+          jogo.jogadorAtual,
+          jogo.jogador1,
+          jogo.jogador2
+        );
       };
     });
   }

@@ -62,10 +62,6 @@ export class Jogo {
   }
 
   definirCorJogador() {
-    if (this.jogadorAtual === this.jogador1.tipoJogador) {
-      return "blue";
-    } else {
-      return "red";
-    }
+    return this.jogadorAtual === this.jogador1.tipoJogador ? "blue" : "red";
   }
 }
